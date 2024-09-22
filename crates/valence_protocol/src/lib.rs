@@ -1,3 +1,4 @@
+#![feature(specialization)]
 #![doc = include_str!("../README.md")]
 #![deny(
     rustdoc::broken_intra_doc_links,
