@@ -13,6 +13,12 @@ pub struct ItemStack {
     pub nbt: Option<Compound>,
 }
 
+impl From<ItemKind> for ItemStack {
+    fn from(item: ItemKind) -> Self {
+        Self::new(item, 1, None)
+    }
+}
+
 impl ItemStack {
     pub const EMPTY: ItemStack = ItemStack {
         item: ItemKind::Air,
