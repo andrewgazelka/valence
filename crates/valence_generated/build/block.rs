@@ -23,6 +23,8 @@ struct Block {
     properties: Vec<Property>,
     default_state_id: u16,
     states: Vec<State>,
+    hardness: f32,
+    blast_resistance: f32,
 }
 
 impl Block {
@@ -413,6 +415,18 @@ pub fn build() -> anyhow::Result<TokenStream> {
         })
         .collect::<TokenStream>();
 
+    let block_kind_to_hardness_arms = blocks
+        .iter()
+        .map(|block| {
+            let name = ident(block.name.to_pascal_case());
+            let hardness = block.hardness;
+
+            quote! {
+                BlockKind::#name => #hardness,
+            }
+        })
+        .collect::<TokenStream>();
+
     let block_kind_from_raw_arms = blocks
         .iter()
         .map(|block| {
@@ -767,6 +781,12 @@ pub fn build() -> anyhow::Result<TokenStream> {
             pub const fn translation_key(self) -> &'static str {
                 match self {
                     #kind_to_translation_key_arms
+                }
+            }
+
+            pub const fn hardness(self) -> f32 {
+                match self {
+                    #block_kind_to_hardness_arms
                 }
             }
 
