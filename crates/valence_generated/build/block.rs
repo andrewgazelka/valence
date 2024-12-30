@@ -427,6 +427,18 @@ pub fn build() -> anyhow::Result<TokenStream> {
         })
         .collect::<TokenStream>();
 
+    let block_kind_to_blast_resistance_arms = blocks
+        .iter()
+        .map(|block| {
+            let name = ident(block.name.to_pascal_case());
+            let blast_resistance = block.blast_resistance;
+
+            quote! {
+                BlockKind::#name => #blast_resistance,
+            }
+        })
+        .collect::<TokenStream>();
+
     let block_kind_from_raw_arms = blocks
         .iter()
         .map(|block| {
@@ -787,6 +799,12 @@ pub fn build() -> anyhow::Result<TokenStream> {
             pub const fn hardness(self) -> f32 {
                 match self {
                     #block_kind_to_hardness_arms
+                }
+            }
+
+            pub const fn blast_resistance(self) -> f32 {
+                match self {
+                    #block_kind_to_blast_resistance_arms
                 }
             }
 
