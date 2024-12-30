@@ -15,7 +15,7 @@ struct Item {
     enchantability: u8,
     fireproof: bool,
     food: Option<FoodComponent>,
-    equippable: Option<EquipmentSlot>,
+    equippable: Option<String>,
 }
 
 #[derive(Deserialize, Clone, Debug)]
@@ -26,14 +26,6 @@ struct FoodComponent {
     meat: bool,
     snack: bool,
     // TODO: effects
-}
-
-#[derive(Deserialize, Clone, Debug)]
-enum EquipmentSlot {
-    BOOTS,
-    LEGGINGS,
-    CHESTPLATE,
-    HELMET,
 }
 
 pub fn build() -> anyhow::Result<TokenStream> {
@@ -143,16 +135,23 @@ pub fn build() -> anyhow::Result<TokenStream> {
         })
         .collect::<TokenStream>();
 
+    let boots = String::from("boots");
+    let leggings = String::from("leggings");
+    let chestplate = String::from("chestplate");
+    let helmet = String::from("helmet");
+
+
     let item_kind_to_equippable_arms = items
         .iter()
         .map(|item| match &item.equippable {
             Some(slot) => {
                 let name = ident(item.name.to_pascal_case());
                 let slot = match slot {
-                    EquipmentSlot::BOOTS => quote! { EquipmentSlot::BOOTS },
-                    EquipmentSlot::LEGGINGS => quote! { EquipmentSlot::LEGGINGS },
-                    EquipmentSlot::CHESTPLATE => quote! { EquipmentSlot::CHESTPLATE },
-                    EquipmentSlot::HELMET => quote! { EquipmentSlot::HELMET },
+                    boots => quote! { EquipmentSlot::Boots },
+                    leggings => quote! { EquipmentSlot::Leggings },
+                    chestplate => quote! { EquipmentSlot::Chestplate },
+                    helmet => quote! { EquipmentSlot::Helmet },
+                    _ => quote! { EquipmentSlot::Helmet },
                 };
                 quote! {
                     Self::#name => Some(#slot),
@@ -223,7 +222,7 @@ pub fn build() -> anyhow::Result<TokenStream> {
 
         #[derive(Clone, Copy, PartialEq, PartialOrd, Debug)]
         pub enum EquipmentSlot {
-            BOOTS, LEGGINGS, CHESTPLATE, HELMET
+            Boots, Leggings, Chestplate, Helmet
         }
 
         impl ItemKind {

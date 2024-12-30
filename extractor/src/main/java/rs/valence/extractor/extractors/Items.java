@@ -62,7 +62,7 @@ public class Items implements Main.Extractor {
 
             if (item instanceof ArmorItem) {
                 ArmorItem armor = (ArmorItem) item;
-                itemJson.addProperty("equippable", armor.getType().getName().toUpperCase());
+                itemJson.addProperty("equippable", armor.getType().getName());
             }
 
             itemsJson.add(itemJson);

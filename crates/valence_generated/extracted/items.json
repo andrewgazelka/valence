@@ -6811,7 +6811,7 @@
     "max_durability": 275,
     "enchantability": 9,
     "fireproof": false,
-    "equippable": "HELMET"
+    "equippable": "helmet"
   },
   {
     "id": 757,
@@ -7376,7 +7376,7 @@
     "max_durability": 55,
     "enchantability": 15,
     "fireproof": false,
-    "equippable": "HELMET"
+    "equippable": "helmet"
   },
   {
     "id": 817,
@@ -7386,7 +7386,7 @@
     "max_durability": 80,
     "enchantability": 15,
     "fireproof": false,
-    "equippable": "CHESTPLATE"
+    "equippable": "chestplate"
   },
   {
     "id": 818,
@@ -7396,7 +7396,7 @@
     "max_durability": 75,
     "enchantability": 15,
     "fireproof": false,
-    "equippable": "LEGGINGS"
+    "equippable": "leggings"
   },
   {
     "id": 819,
@@ -7406,7 +7406,7 @@
     "max_durability": 65,
     "enchantability": 15,
     "fireproof": false,
-    "equippable": "BOOTS"
+    "equippable": "boots"
   },
   {
     "id": 820,
@@ -7416,7 +7416,7 @@
     "max_durability": 165,
     "enchantability": 12,
     "fireproof": false,
-    "equippable": "HELMET"
+    "equippable": "helmet"
   },
   {
     "id": 821,
@@ -7426,7 +7426,7 @@
     "max_durability": 240,
     "enchantability": 12,
     "fireproof": false,
-    "equippable": "CHESTPLATE"
+    "equippable": "chestplate"
   },
   {
     "id": 822,
@@ -7436,7 +7436,7 @@
     "max_durability": 225,
     "enchantability": 12,
     "fireproof": false,
-    "equippable": "LEGGINGS"
+    "equippable": "leggings"
   },
   {
     "id": 823,
@@ -7446,7 +7446,7 @@
     "max_durability": 195,
     "enchantability": 12,
     "fireproof": false,
-    "equippable": "BOOTS"
+    "equippable": "boots"
   },
   {
     "id": 824,
@@ -7456,7 +7456,7 @@
     "max_durability": 165,
     "enchantability": 9,
     "fireproof": false,
-    "equippable": "HELMET"
+    "equippable": "helmet"
   },
   {
     "id": 825,
@@ -7466,7 +7466,7 @@
     "max_durability": 240,
     "enchantability": 9,
     "fireproof": false,
-    "equippable": "CHESTPLATE"
+    "equippable": "chestplate"
   },
   {
     "id": 826,
@@ -7476,7 +7476,7 @@
     "max_durability": 225,
     "enchantability": 9,
     "fireproof": false,
-    "equippable": "LEGGINGS"
+    "equippable": "leggings"
   },
   {
     "id": 827,
@@ -7486,7 +7486,7 @@
     "max_durability": 195,
     "enchantability": 9,
     "fireproof": false,
-    "equippable": "BOOTS"
+    "equippable": "boots"
   },
   {
     "id": 828,
@@ -7496,7 +7496,7 @@
     "max_durability": 363,
     "enchantability": 10,
     "fireproof": false,
-    "equippable": "HELMET"
+    "equippable": "helmet"
   },
   {
     "id": 829,
@@ -7506,7 +7506,7 @@
     "max_durability": 528,
     "enchantability": 10,
     "fireproof": false,
-    "equippable": "CHESTPLATE"
+    "equippable": "chestplate"
   },
   {
     "id": 830,
@@ -7516,7 +7516,7 @@
     "max_durability": 495,
     "enchantability": 10,
     "fireproof": false,
-    "equippable": "LEGGINGS"
+    "equippable": "leggings"
   },
   {
     "id": 831,
@@ -7526,7 +7526,7 @@
     "max_durability": 429,
     "enchantability": 10,
     "fireproof": false,
-    "equippable": "BOOTS"
+    "equippable": "boots"
   },
   {
     "id": 832,
@@ -7536,7 +7536,7 @@
     "max_durability": 77,
     "enchantability": 25,
     "fireproof": false,
-    "equippable": "HELMET"
+    "equippable": "helmet"
   },
   {
     "id": 833,
@@ -7546,7 +7546,7 @@
     "max_durability": 112,
     "enchantability": 25,
     "fireproof": false,
-    "equippable": "CHESTPLATE"
+    "equippable": "chestplate"
   },
   {
     "id": 834,
@@ -7556,7 +7556,7 @@
     "max_durability": 105,
     "enchantability": 25,
     "fireproof": false,
-    "equippable": "LEGGINGS"
+    "equippable": "leggings"
   },
   {
     "id": 835,
@@ -7566,7 +7566,7 @@
     "max_durability": 91,
     "enchantability": 25,
     "fireproof": false,
-    "equippable": "BOOTS"
+    "equippable": "boots"
   },
   {
     "id": 836,
@@ -7576,7 +7576,7 @@
     "max_durability": 407,
     "enchantability": 15,
     "fireproof": true,
-    "equippable": "HELMET"
+    "equippable": "helmet"
   },
   {
     "id": 837,
@@ -7586,7 +7586,7 @@
     "max_durability": 592,
     "enchantability": 15,
     "fireproof": true,
-    "equippable": "CHESTPLATE"
+    "equippable": "chestplate"
   },
   {
     "id": 838,
@@ -7596,7 +7596,7 @@
     "max_durability": 555,
     "enchantability": 15,
     "fireproof": true,
-    "equippable": "LEGGINGS"
+    "equippable": "leggings"
   },
   {
     "id": 839,
@@ -7606,7 +7606,7 @@
     "max_durability": 481,
     "enchantability": 15,
     "fireproof": true,
-    "equippable": "BOOTS"
+    "equippable": "boots"
   },
   {
     "id": 840,
