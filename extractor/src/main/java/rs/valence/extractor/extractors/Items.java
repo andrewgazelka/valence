@@ -3,6 +3,8 @@ package rs.valence.extractor.extractors;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+
+import net.minecraft.item.ArmorItem;
 import net.minecraft.registry.Registries;
 import rs.valence.extractor.Main;
 
@@ -56,6 +58,11 @@ public class Items implements Main.Extractor {
                 }
 
                 foodJson.add("effects", effectsJson);
+            }
+
+            if (item instanceof ArmorItem) {
+                ArmorItem armor = (ArmorItem) item;
+                itemJson.addProperty("equippable", armor.getType().getName());
             }
 
             itemsJson.add(itemJson);

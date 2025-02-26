@@ -15,6 +15,7 @@ struct Item {
     enchantability: u8,
     fireproof: bool,
     food: Option<FoodComponent>,
+    equippable: Option<String>,
 }
 
 #[derive(Deserialize, Clone, Debug)]
@@ -134,6 +135,32 @@ pub fn build() -> anyhow::Result<TokenStream> {
         })
         .collect::<TokenStream>();
 
+    let boots = String::from("boots");
+    let leggings = String::from("leggings");
+    let chestplate = String::from("chestplate");
+    let helmet = String::from("helmet");
+
+
+    let item_kind_to_equippable_arms = items
+        .iter()
+        .map(|item| match &item.equippable {
+            Some(slot) => {
+                let name = ident(item.name.to_pascal_case());
+                let slot = match slot {
+                    boots => quote! { EquipmentSlot::Boots },
+                    leggings => quote! { EquipmentSlot::Leggings },
+                    chestplate => quote! { EquipmentSlot::Chestplate },
+                    helmet => quote! { EquipmentSlot::Helmet },
+                    _ => quote! { EquipmentSlot::Helmet },
+                };
+                quote! {
+                    Self::#name => Some(#slot),
+                }
+            }
+            None => quote! {},
+        })
+        .collect::<TokenStream>();
+
     let item_kind_to_max_durability_arms = items
         .iter()
         .filter(|item| item.max_durability != 0)
@@ -191,6 +218,11 @@ pub fn build() -> anyhow::Result<TokenStream> {
             pub always_edible: bool,
             pub meat: bool,
             pub snack: bool,
+        }
+
+        #[derive(Clone, Copy, PartialEq, PartialOrd, Debug)]
+        pub enum EquipmentSlot {
+            Boots, Leggings, Chestplate, Helmet
         }
 
         impl ItemKind {
@@ -279,6 +311,14 @@ pub fn build() -> anyhow::Result<TokenStream> {
                 match self {
                     #item_kind_to_fireproof_arms
                     _ => false
+                }
+            }
+
+            /// Returns the slot this ItemKind can be equipped on
+            pub const fn equippable(self) -> Option<EquipmentSlot> {
+                match self {
+                    #item_kind_to_equippable_arms
+                    _ => None
                 }
             }
 
